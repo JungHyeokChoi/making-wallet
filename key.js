@@ -79,6 +79,22 @@ function mnemonicToPrivateKey(mnemonic){
 	return Buffer.from(privateKey.toString(), "hex")
 }
 
+function testCreateKey(){
+	//Mnemonic of the private key in use
+	const mnemonic = new Mnemonic("")
+	console.log(mnemonic.toString())
+
+	//Create Mnemonic
+	//const mnemonic = createMnemonic(24)
+	//console.log(createMnemonic().toString())
+
+	const privateKey = mnemonicToPrivateKey(mnemonic)
+	console.log("Private Key : ", privateKey.toString("hex"))
+
+	const address = privateKeyToAddress(privateKey)
+	console.log("Address : ", address)
+}
+
 export default {
 	createPrivateKey,
 	createPublicKey,
@@ -88,18 +104,3 @@ export default {
 	createMnemonic,
 	mnemonicToPrivateKey,
 }
-
-//Mnemonic of the private key in use
-const mnemonic = new Mnemonic("")
-console.log(mnemonic.toString())
-
-//Create Mnemonic
-//const mnemonic = createMnemonic(24)
-//console.log(createMnemonic().toString())
-
-const privateKey = mnemonicToPrivateKey(mnemonic)
-console.log("Private Key : ", privateKey.toString("hex"))
-
-const address = privateKeyToAddress(privateKey)
-console.log("Address : ", address)
-
