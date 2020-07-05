@@ -79,7 +79,7 @@ function mnemonicToPrivateKey(mnemonic){
 	return Buffer.from(privateKey.toString(), "hex")
 }
 
-function testCreateKey(){
+function test(){
 	//Mnemonic of the private key in use
 	const mnemonic = new Mnemonic("")
 	console.log(mnemonic.toString())

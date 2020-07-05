@@ -39,7 +39,7 @@ function ethRecover(message, signature){
 }
 
 //Test Create Key
-function testCreateKey(){
+function test(){
 	const privateKey = key.createPrivateKey()
 	const publicKey = key.createPublicKey(privateKey)
 	const message = "Hello World"
